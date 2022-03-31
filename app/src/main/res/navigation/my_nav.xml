@@ -6,17 +6,17 @@
     app:startDestination="@id/favoriteRecipesFragment">
     <fragment
         android:id="@+id/recipesFragment"
-        android:name="com.kotlinproject.modernfoodrecipesapp.RecipesFragment"
+        android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.recipes.RecipesFragment"
         android:label="Recipes"
         tools:layout="@layout/fragment_recipes" />
     <fragment
         android:id="@+id/favoriteRecipesFragment"
-        android:name="com.kotlinproject.modernfoodrecipesapp.FavoriteRecipesFragment"
+        android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.favorite.FavoriteRecipesFragment"
         android:label="Favorites"
         tools:layout="@layout/fragment_favorite_recipes" />
     <fragment
         android:id="@+id/foodJokeFragment"
-        android:name="com.kotlinproject.modernfoodrecipesapp.FoodJokeFragment"
+        android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.foodjoke.FoodJokeFragment"
         android:label="Food Joke"
         tools:layout="@layout/fragment_food_joke" />
 

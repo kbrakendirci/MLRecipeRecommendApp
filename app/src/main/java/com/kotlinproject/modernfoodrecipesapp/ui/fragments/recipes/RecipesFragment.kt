@@ -1,10 +1,11 @@
-package com.kotlinproject.modernfoodrecipesapp
+package com.kotlinproject.modernfoodrecipesapp.ui.fragments.recipes
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.kotlinproject.modernfoodrecipesapp.R
 import kotlinx.android.synthetic.main.fragment_recipes.view.*
 
 class RecipesFragment : Fragment() {
