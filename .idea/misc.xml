@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_clock.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_food_joke.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v24/ic_heart.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v24/ic_leaf.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v24/ic_restaurant.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v24/ic_sad.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_star.xml" value="0.15462962962962962" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1609375" />
         <entry key="app/src/main/res/layout/fragment_favorite_recipes.xml" value="0.175" />
@@ -11,6 +16,8 @@
         <entry key="app/src/main/res/layout/fragment_recipes.xml" value="0.175" />
         <entry key="app/src/main/res/layout/ic_food_joke.xml" value="0.175" />
         <entry key="app/src/main/res/layout/ic_menu_book.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/placeholder_row_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/recipes_row_layout.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.175" />
       </map>
     </option>

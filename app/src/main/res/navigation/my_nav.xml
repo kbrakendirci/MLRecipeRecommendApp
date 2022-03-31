@@ -5,18 +5,19 @@
     android:id="@+id/my_nav"
     app:startDestination="@id/favoriteRecipesFragment">
     <fragment
+        android:id="@+id/recipesFragment"
+        android:name="com.kotlinproject.modernfoodrecipesapp.RecipesFragment"
+        android:label="Recipes"
+        tools:layout="@layout/fragment_recipes" />
+    <fragment
         android:id="@+id/favoriteRecipesFragment"
         android:name="com.kotlinproject.modernfoodrecipesapp.FavoriteRecipesFragment"
-        android:label="Recipes"
+        android:label="Favorites"
         tools:layout="@layout/fragment_favorite_recipes" />
     <fragment
         android:id="@+id/foodJokeFragment"
         android:name="com.kotlinproject.modernfoodrecipesapp.FoodJokeFragment"
-        android:label="Favorites"
-        tools:layout="@layout/fragment_food_joke" />
-    <fragment
-        android:id="@+id/recipesFragment"
-        android:name="com.kotlinproject.modernfoodrecipesapp.RecipesFragment"
         android:label="Food Joke"
-        tools:layout="@layout/fragment_recipes" />
+        tools:layout="@layout/fragment_food_joke" />
+
 </navigation>
