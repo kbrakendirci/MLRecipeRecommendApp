@@ -1,7 +1,7 @@
 package com.kotlinproject.modernfoodrecipesapp.di
 
-import com.kotlinproject.modernfoodrecipesapp.Constant.Companion.BASE_URL
-import com.kotlinproject.modernfoodrecipesapp.FoodRecipesApi
+import com.kotlinproject.modernfoodrecipesapp.util.Constant.Companion.BASE_URL
+import com.kotlinproject.modernfoodrecipesapp.data.network.FoodRecipesApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -52,7 +52,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): FoodRecipesApi{
+    fun provideApiService(retrofit: Retrofit): FoodRecipesApi {
         return retrofit.create(FoodRecipesApi::class.java)
     }
 

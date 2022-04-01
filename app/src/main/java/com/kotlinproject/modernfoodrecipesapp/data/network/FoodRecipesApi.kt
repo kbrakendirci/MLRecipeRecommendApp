@@ -1,4 +1,4 @@
-package com.kotlinproject.modernfoodrecipesapp
+package com.kotlinproject.modernfoodrecipesapp.data.network
 import com.kotlinproject.modernfoodrecipesapp.model.FoodRecipe
 import retrofit2.Response
 import retrofit2.http.GET

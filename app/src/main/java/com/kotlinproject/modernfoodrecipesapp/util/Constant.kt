@@ -1,4 +1,4 @@
-package com.kotlinproject.modernfoodrecipesapp
+package com.kotlinproject.modernfoodrecipesapp.util
 
 class Constant {
     companion object {
