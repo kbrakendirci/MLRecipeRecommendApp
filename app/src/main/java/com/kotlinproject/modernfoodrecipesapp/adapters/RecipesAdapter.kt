@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kotlinproject.modernfoodrecipesapp.databinding.RecipesRowLayoutBinding
 import com.kotlinproject.modernfoodrecipesapp.model.FoodRecipe
 import com.kotlinproject.modernfoodrecipesapp.model.Result
+import com.kotlinproject.modernfoodrecipesapp.util.RecipesDiffUtil
 
 class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
 
@@ -35,7 +36,7 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentRecipe = recipes[position]
-
+        holder.bind(currentRecipe)
     }
 
     override fun getItemCount(): Int {
@@ -43,7 +44,9 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
     }
 
     fun setData(newData: FoodRecipe){
-          recipes = newData.results
-        notifyDataSetChanged()
-          }
+        val recipeDiffUtil = newData.results?.let { RecipesDiffUtil(recipes, it) }
+        val diffUtilResult = recipeDiffUtil?.let { DiffUtil.calculateDiff(it) }
+        recipes = newData.results!!
+        diffUtilResult?.dispatchUpdatesTo(this)
+    }
 }

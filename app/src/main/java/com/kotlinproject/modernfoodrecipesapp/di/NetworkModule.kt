@@ -28,17 +28,16 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideConverterFactory(): GsonConverterFactory{
+    fun provideConverterFactory(): GsonConverterFactory {
         return GsonConverterFactory.create()
-
     }
 
     @Singleton
     @Provides
     fun provideRetrofitInstance(
         okHttpClient: OkHttpClient,
-    gsonConverterFactory: GsonConverterFactory
-    ):Retrofit{
+        gsonConverterFactory: GsonConverterFactory
+    ): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(okHttpClient)
@@ -46,12 +45,8 @@ object NetworkModule {
             .build()
     }
 
-
-
-
-
-    @Provides
     @Singleton
+    @Provides
     fun provideApiService(retrofit: Retrofit): FoodRecipesApi {
         return retrofit.create(FoodRecipesApi::class.java)
     }

@@ -1,18 +1,25 @@
 package com.kotlinproject.modernfoodrecipesapp.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+
+
+@Parcelize
 data class ExtendedIngredient(
     @SerializedName("amount")
-    val amount: Double,
+    val amount: Double?,
     @SerializedName("consistency")
-    val consistency: String,
+    val consistency: String?,
     @SerializedName("image")
-    val image: String,
+    val image: String?,
     @SerializedName("name")
-    val name: String,
+    val name: String?,
+    @SerializedName("nameClean")
+    val nameClean: String?,
     @SerializedName("original")
-    val original: String,
+    val original: String?,
     @SerializedName("unit")
-    val unit: String
-)
+    val unit: String?
+):Parcelable

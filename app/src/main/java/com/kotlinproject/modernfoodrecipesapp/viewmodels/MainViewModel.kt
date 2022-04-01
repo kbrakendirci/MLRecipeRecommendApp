@@ -1,4 +1,4 @@
-package com.kotlinproject.modernfoodrecipesapp
+package com.kotlinproject.modernfoodrecipesapp.viewmodels
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.lang.Exception
@@ -15,7 +15,11 @@ import com.kotlinproject.modernfoodrecipesapp.model.FoodRecipe
 import com.kotlinproject.modernfoodrecipesapp.util.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-
+//@HiltViewModel
+//class MainViewModel @Inject constructor(
+ //   private val repository: Repository,
+ //   application: Application
+//) : AndroidViewModel(application) {
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val repository: Repository,
