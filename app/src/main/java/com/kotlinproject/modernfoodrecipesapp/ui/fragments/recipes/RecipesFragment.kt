@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.fragment_recipes.view.*
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kotlinproject.modernfoodrecipesapp.viewmodels.MainViewModel
 import com.kotlinproject.modernfoodrecipesapp.adapters.RecipesAdapter
@@ -51,6 +52,10 @@ class RecipesFragment : Fragment() {
 
         setupRecyclerView()
         readDatabase()
+
+        binding.recipesFab.setOnClickListener {
+            findNavController().navigate(R.id.action_recipesFragment_to_recipesBottomSheet)
+        }
 
         return binding.root
     }

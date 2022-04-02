@@ -18,6 +18,7 @@
         <entry key="app/src/main/res/layout/ic_food_joke.xml" value="0.175" />
         <entry key="app/src/main/res/layout/ic_menu_book.xml" value="0.175" />
         <entry key="app/src/main/res/layout/placeholder_row_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/recipes_bottom_sheet.xml" value="0.1" />
         <entry key="app/src/main/res/layout/recipes_row_layout.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.175" />
       </map>
