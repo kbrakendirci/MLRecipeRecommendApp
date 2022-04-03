@@ -18,13 +18,17 @@ import com.kotlinproject.modernfoodrecipesapp.adapters.RecipesAdapter
 import com.kotlinproject.modernfoodrecipesapp.databinding.FragmentRecipesBinding
 import com.kotlinproject.modernfoodrecipesapp.util.Constant
 import com.kotlinproject.modernfoodrecipesapp.util.Constant.Companion.API_KEY
+import com.kotlinproject.modernfoodrecipesapp.util.NetworkListener
 import com.kotlinproject.modernfoodrecipesapp.util.NetworkResult
 import com.kotlinproject.modernfoodrecipesapp.util.observeOnce
 import com.kotlinproject.modernfoodrecipesapp.viewmodels.RecipesViewModel
 
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
+@ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class RecipesFragment : Fragment() {
 
@@ -34,6 +38,8 @@ class RecipesFragment : Fragment() {
     private lateinit var mainViewModel: MainViewModel
     private lateinit var recipesViewModel: RecipesViewModel
     private val mAdapter by lazy { RecipesAdapter() }
+
+    private lateinit var networkListener: NetworkListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,10 +57,28 @@ class RecipesFragment : Fragment() {
         binding.mainViewModel = mainViewModel
 
         setupRecyclerView()
-        readDatabase()
+
+        recipesViewModel.readBackOnline.observe(viewLifecycleOwner, {
+            recipesViewModel.backOnline = it
+        })
+
+        lifecycleScope.launch {
+            networkListener = NetworkListener()
+            networkListener.checkNetworkAvailability(requireContext())
+                .collect { status->
+                    Log.d("NetworkListener", status.toString())
+                    recipesViewModel.networkStatus = status
+                    recipesViewModel.showNetworkStatus()
+                    readDatabase()
+                           }
+        }
 
         binding.recipesFab.setOnClickListener {
-            findNavController().navigate(R.id.action_recipesFragment_to_recipesBottomSheet)
+            if (recipesViewModel.networkStatus) {
+                findNavController().navigate(R.id.action_recipesFragment_to_recipesBottomSheet)
+            } else {
+                recipesViewModel.showNetworkStatus()
+            }
         }
 
         return binding.root
