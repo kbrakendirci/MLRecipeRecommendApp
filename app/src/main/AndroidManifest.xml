@@ -16,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ModernFoodRecipesApp">
         <activity
+            android:name=".ui.Activity_Details"
+            android:exported="true"
+            android:label="Details"
+            android:theme="@style/DetailsActivityStyle"/>
+
+        <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
