@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import com.kotlinproject.modernfoodrecipesapp.data.database.RecipesEntity
+import com.kotlinproject.modernfoodrecipesapp.data.database.entities.RecipesEntity
 import com.kotlinproject.modernfoodrecipesapp.model.FoodRecipe
 import com.kotlinproject.modernfoodrecipesapp.util.NetworkResult
 
