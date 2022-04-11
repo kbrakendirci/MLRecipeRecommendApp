@@ -21,6 +21,7 @@ import com.kotlinproject.modernfoodrecipesapp.util.NetworkResult
 import com.kotlinproject.modernfoodrecipesapp.util.observeOnce
 import com.kotlinproject.modernfoodrecipesapp.viewmodels.RecipesViewModel
 import androidx.appcompat.widget.SearchView
+import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
@@ -29,6 +30,8 @@ import kotlinx.coroutines.launch
 @ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class RecipesFragment : Fragment() , SearchView.OnQueryTextListener {
+
+    private val args by navArgs<RecipesFragmentArgs>()
 
     private var _binding: FragmentRecipesBinding? = null
     private val binding get() = _binding!!
@@ -53,7 +56,9 @@ class RecipesFragment : Fragment() , SearchView.OnQueryTextListener {
         _binding = FragmentRecipesBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         binding.mainViewModel = mainViewModel
+
         setHasOptionsMenu(true)
+
         setupRecyclerView()
 
         recipesViewModel.readBackOnline.observe(viewLifecycleOwner, {
@@ -63,12 +68,12 @@ class RecipesFragment : Fragment() , SearchView.OnQueryTextListener {
         lifecycleScope.launch {
             networkListener = NetworkListener()
             networkListener.checkNetworkAvailability(requireContext())
-                .collect { status->
+                .collect { status ->
                     Log.d("NetworkListener", status.toString())
                     recipesViewModel.networkStatus = status
                     recipesViewModel.showNetworkStatus()
                     readDatabase()
-                           }
+                }
         }
 
         binding.recipesFab.setOnClickListener {
@@ -87,6 +92,7 @@ class RecipesFragment : Fragment() , SearchView.OnQueryTextListener {
         binding.recyclerview.layoutManager = LinearLayoutManager(requireContext())
         showShimmerEffect()
     }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.recipes_menu, menu)
 
@@ -107,11 +113,10 @@ class RecipesFragment : Fragment() , SearchView.OnQueryTextListener {
         return true
     }
 
-
     private fun readDatabase() {
         lifecycleScope.launch {
             mainViewModel.readRecipes.observeOnce(viewLifecycleOwner, { database ->
-                if (database.isNotEmpty()) {
+                if (database.isNotEmpty() && !args.backFromBottomSheet) {
                     Log.d("RecipesFragment", "readDatabase called!")
                     mAdapter.setData(database[0].foodRecipe)
                     hideShimmerEffect()
@@ -175,7 +180,7 @@ class RecipesFragment : Fragment() , SearchView.OnQueryTextListener {
 
     private fun loadDataFromCache() {
         lifecycleScope.launch {
-            mainViewModel.readRecipes.observe(viewLifecycleOwner, {database->
+            mainViewModel.readRecipes.observe(viewLifecycleOwner, { database ->
                 if (database.isNotEmpty()) {
                     mAdapter.setData(database[0].foodRecipe)
                 }
@@ -195,4 +200,5 @@ class RecipesFragment : Fragment() , SearchView.OnQueryTextListener {
         super.onDestroy()
         _binding = null
     }
+
 }

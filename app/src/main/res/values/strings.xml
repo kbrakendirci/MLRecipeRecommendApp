@@ -35,4 +35,26 @@
     <string name="apply">Apply</string>
 
 
+    <string name="search">Search</string>
+    <string name="cheap">Cheap</string>
+    <string name="healthy">Healthy</string>
+    <string name="dairy_free">Dairy Free</string>
+
+    <string name="next">NEXT</string>
+    <string name="finish">FINISH</string>
+    <string name="precious">PREVIOUS</string>
+
+    <string name="slide_1_title">Dolabta Ne Var?</string>
+    <string name="slide_1_desc">Uygulamamız dolabınızda kalan malzelerle yapabileceğiniz yemekleri size öneriyor</string>
+
+    <string name="slide_2_title">Diyet Tercihlerinize Göre Yemek Tarifleri Bulun! </string>
+    <string name="slide_2_desc">Belirli bir diyeti takip etmek isteyenlerin işini kolaylaştırabilecek bir mobil uygulama!</string>
+
+    <string name="slide_3_title">Yapay Zeka Destekli Yemek Öneri Uygulaması</string>
+    <string name="slide_3_desc">Sizin için içeriğindeki yağ,şeker tuz oranlarına göre benzer ürünlerle yapılan  yemekleri önerir!</string>
+
+    <string name="slide_4_title">Yapay zeka destekli mobil uygulama</string>
+    <string name="slide_4_desc">Sizin için içeriğindeki yağ,şeker tuz oranlarına göre benzer ürünlerle yapılan  yemekleri önerir!</string>
+
+
 </resources>

@@ -15,7 +15,11 @@
         <argument
             android:name="backFromBottomSheet"
             app:argType="boolean"
-            android:defaultValue="false" /></fragment>
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_recipesFragment_to_activity_Details"
+            app:destination="@id/activity_Details" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteRecipesFragment"
         android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.favorite.FavoriteRecipesFragment"
@@ -35,5 +39,14 @@
             android:id="@+id/action_recipesBottomSheet_to_recipesFragment"
             app:destination="@id/recipesFragment" />
     </dialog>
+    <activity
+        android:id="@+id/activity_Details"
+        android:name="com.kotlinproject.modernfoodrecipesapp.ui.Activity_Details"
+        android:label="activity_details"
+        tools:layout="@layout/activity_details" >
+        <argument
+            android:name="result"
+            app:argType="com.kotlinproject.modernfoodrecipesapp.model.Result" />
+    </activity>
 
 </navigation>
