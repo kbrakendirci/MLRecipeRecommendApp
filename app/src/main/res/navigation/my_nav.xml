@@ -26,10 +26,10 @@
         android:label="Favorites"
         tools:layout="@layout/fragment_favorite_recipes" />
     <fragment
-        android:id="@+id/foodJokeFragment"
-        android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.foodjoke.FoodJokeFragment"
+        android:id="@+id/IngredientsFragment"
+        android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.ingredientssearch.SearchFragment"
         android:label="Food Joke"
-        tools:layout="@layout/fragment_food_joke" />
+        tools:layout="@layout/fragment_search" />
     <dialog
         android:id="@+id/recipesBottomSheet"
         android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.recipes.bottomsheet.RecipesBottomSheet"

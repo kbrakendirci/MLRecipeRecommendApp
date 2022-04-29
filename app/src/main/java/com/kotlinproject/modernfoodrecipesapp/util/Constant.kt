@@ -5,7 +5,9 @@ class Constant{
     companion object {
 
         const val BASE_IMAGE_URL = "https://spoonacular.com/cdn/ingredients_100x100/"
-
+        const val  TAG = "SearchFragment"
+        const val SEACH_RECIPES_TIME_DELAY = 500L
+        const val QUERY_PAGE_SIZE = 20
         const val BASE_URL = "https://api.spoonacular.com"
         const val API_KEY = "a3206fe66742458b81063fe27ec66fc1"
         const val RECIPE_RESULT_KEY = "recipeBundle"
