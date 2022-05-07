@@ -1,60 +1,112 @@
 package com.kotlinproject.modernfoodrecipesapp.ui.fragments.favorite
-
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.kotlinproject.modernfoodrecipesapp.R
+import com.kotlinproject.ui.fragments.favorite.CustomAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import kotlinx.android.synthetic.main.fragment_favorite_recipes.*
+import okhttp3.*
+import org.apache.commons.text.StringEscapeUtils
+import org.json.JSONObject
+import java.io.IOException
+import java.util.concurrent.TimeUnit
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FavoriteRecipesFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FavoriteRecipesFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
+        }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        callButton.setOnClickListener {
+            val recipeId =recipeId.text
+            val sortorder = sortOrder.text
+
+
+            var recyclerView = recycler_view
+            val data = arrayListOf<String>();
+
+
+
+            val client = OkHttpClient.Builder()
+                .connectTimeout(50, TimeUnit.SECONDS)
+                .writeTimeout(50, TimeUnit.SECONDS)
+                .readTimeout(50, TimeUnit.SECONDS)
+                .build()
+
+            val BASE_URL = "http://192.168.1.47:4000/?recipe_id="+recipeId+"&sort_order="+sortorder
+
+            val request = Request.Builder()
+                .url(BASE_URL)
+                .build()
+
+            client.newCall(request).enqueue(object : Callback{
+                override fun onFailure(call: Call, e: IOException) {
+                    e.printStackTrace()
+                }
+                override fun onResponse(call: Call, response: Response) {
+                    response.use {
+                        if (!response.isSuccessful) throw IOException("Unexpected code $response")
+                        val jsonString = response.body?.string()
+
+                        try {
+                            activity?.runOnUiThread(Runnable {
+                                val json = JSONObject(jsonString)
+                                //ekrana 1 resim bastırmak için 1 yaptık i yapınca sonuç alamıyorum.Amacım aslında 10 tane recipeı ve isimlerini göstermek
+                                for (i in 0..10) {
+                                    val cleanedData = removeQuotesAndUnescape(json.getString("data"))?.split(",")?.get(i)?.replace("]", "")?.replace("\"", "")
+                                    cleanedData?.let { it1 -> data.add(it1) }
+                                    val adapter = CustomAdapter(context, data)
+                                    recyclerView.layoutManager = LinearLayoutManager(context)
+                                    recyclerView.adapter = adapter
+                                    var uiHandler = Handler(Looper.getMainLooper())
+                                    //Burda döngü ile alındı
+
+                                    /*   uiHandler.post(Runnable {
+                                           name.setText(cleanedData);
+
+                                       })*/
+                                } })
+                        }
+                        catch (e: IOException){
+                            Log.e("Error", e.localizedMessage);
+                        }
+                    }
+
+                }
+            })
+
+
+        }
+        super.onViewCreated(view, savedInstanceState)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_favorite_recipes, container, false)
     }
-
+    private fun removeQuotesAndUnescape(uncleanJson: String): String? {
+        val noQuotes = uncleanJson.replace("^\"|\"$".toRegex(), "")
+        return StringEscapeUtils.unescapeJava(noQuotes)
+    }
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FavoriteRecipesFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
+          @JvmStatic
         fun newInstance(param1: String, param2: String) =
             FavoriteRecipesFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+
             }
     }
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="#0000FF"
+    android:padding="10dp">
+<androidx.cardview.widget.CardView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/black">
+
+
+
+    <TextView
+        android:id="@+id/tv_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List item"
+        android:textColor="#fff"
+        android:textSize="20sp"></TextView>
+<ImageView
+    android:id="@+id/tv_img"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+</androidx.cardview.widget.CardView>
+</LinearLayout>
+

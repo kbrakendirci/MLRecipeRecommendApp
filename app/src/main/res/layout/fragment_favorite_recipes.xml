@@ -3,12 +3,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/lightGray"
     tools:context=".ui.fragments.favorite.FavoriteRecipesFragment">
 
-    <TextView
+
+    <EditText
+        android:id="@+id/recipeId"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:hint="RECIPE ID"
+        android:inputType="numberSigned"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp"></EditText>
+
+    <EditText
+        android:id="@+id/sortOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:hint="SORT ORDER"
+        android:inputType="numberSigned"
+        app:layout_constraintTop_toBottomOf="@+id/recipeId"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CALL SERVICE"
+        android:id="@+id/callButton"
+        app:layout_constraintTop_toBottomOf="@+id/sortOrder">
+
+
+    </Button>
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/callButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

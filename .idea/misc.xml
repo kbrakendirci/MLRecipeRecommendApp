@@ -18,7 +18,7 @@
         <entry key="app/src/main/res/layout/activity_details.xml" value="0.10677083333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1609375" />
         <entry key="app/src/main/res/layout/activity_on_board.xml" value="0.28425925925925927" />
-        <entry key="app/src/main/res/layout/fragment_favorite_recipes.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/fragment_favorite_recipes.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_food_joke.xml" value="0.175" />
         <entry key="app/src/main/res/layout/fragment_ingredients.xml" value="0.17685185185185184" />
         <entry key="app/src/main/res/layout/fragment_instructions.xml" value="0.1" />
@@ -34,6 +34,7 @@
         <entry key="app/src/main/res/layout/placeholder_row_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/recipes_bottom_sheet.xml" value="0.1" />
         <entry key="app/src/main/res/layout/recipes_row_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/recommend_item_list.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.175" />
         <entry key="app/src/main/res/menu/ic_baseline_search_24.xml" value="0.1" />
         <entry key="app/src/main/res/menu/recipes_menu.xml" value="0.11388888888888889" />
