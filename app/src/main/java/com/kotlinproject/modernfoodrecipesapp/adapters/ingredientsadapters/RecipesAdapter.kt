@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 
 import com.elfay.myfridgerecipies.models.RecipiesByIngredientsReponseItem
 import com.kotlinproject.modernfoodrecipesapp.databinding.ListItemRecipeBinding
+import org.json.JSONArray
 
 
 class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.RecipesViewHolder>() {
@@ -17,8 +18,8 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.RecipesViewHolder>() 
         val recipeImage = binding.recipeImage
         val recipeName = binding.recipeName
         val Likes = binding.likescount
-        //val usedIngredient = binding.useding
-        //val missedIngredient = binding.missedIng
+        val UsedIngredient = binding.missedTextView
+        val MissedIngredient = binding.unmissedTextView
 
         val card = binding.cardview
     }
@@ -57,14 +58,21 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.RecipesViewHolder>() 
         }
         holder.recipeName.text = recipe.title
         holder.Likes.text = recipe.likes.toString()
-       // holder.usedIngredient.text = recipe.usedIngredientCount.toString()
-        //holder.missedIngredient.text = recipe.missedIngredientCount.toString()
+        val used =recipe.usedIngredientCount.toDouble()
+        val unused=recipe.missedIngredientCount.toDouble()
+        val total =used + unused
+        val percentage =((used.toDouble())/(total)) * 100
+        holder.UsedIngredient.text=percentage.toInt().toString()
         holder.card.setOnClickListener {
             onItemClickListener?.let {
                 it(recipe)
             }
         }
     }
+
+
+
+
 
     override fun getItemCount(): Int {
         return differ.currentList.size
