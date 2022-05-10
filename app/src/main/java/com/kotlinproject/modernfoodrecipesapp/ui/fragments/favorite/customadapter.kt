@@ -1,5 +1,6 @@
 package com.kotlinproject.ui.fragments.favorite
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,8 +9,9 @@ import android.widget.TextView
 import java.util.ArrayList
 import androidx.recyclerview.widget.RecyclerView
 import com.kotlinproject.modernfoodrecipesapp.R
+import com.squareup.picasso.Picasso
 
-class CustomAdapter(private val context: Context?, private val list: ArrayList<String>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CustomAdapter(private val context: Context?, private val list: List<List<String>>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private inner class ViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -24,7 +26,12 @@ class CustomAdapter(private val context: Context?, private val list: ArrayList<S
         internal fun bind(position: Int) {
             // This method will be called anytime a list item is created or update its data
             //Do your stuff here
-            tvLabel.text = list[position]
+            tvLabel.text = list[position][0]
+            val imageUri = Uri.parse(list[position][1])
+            Picasso.get()
+                .load(imageUri)
+                .noFade()
+                .into(tv_img)
 
         }
 

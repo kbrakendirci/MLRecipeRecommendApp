@@ -1,4 +1,5 @@
 package com.kotlinproject.modernfoodrecipesapp.ui.fragments.favorite
+
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -8,9 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.kotlinproject.modernfoodrecipesapp.R
 import com.kotlinproject.ui.fragments.favorite.CustomAdapter
-
 import kotlinx.android.synthetic.main.fragment_favorite_recipes.*
 import okhttp3.*
 import org.apache.commons.text.StringEscapeUtils
@@ -44,7 +46,7 @@ class FavoriteRecipesFragment : Fragment() {
                 .readTimeout(50, TimeUnit.SECONDS)
                 .build()
 
-            val BASE_URL = "http://192.168.1.47:4000/?recipe_id="+recipeId+"&sort_order="+sortorder
+            val BASE_URL = "http://10.30.121.70:4000?recipe_id="+recipeId+"&sort_order="+sortorder
 
             val request = Request.Builder()
                 .url(BASE_URL)
@@ -65,8 +67,11 @@ class FavoriteRecipesFragment : Fragment() {
                                 //ekrana 1 resim bastırmak için 1 yaptık i yapınca sonuç alamıyorum.Amacım aslında 10 tane recipeı ve isimlerini göstermek
                                 for (i in 0..10) {
                                     val cleanedData = removeQuotesAndUnescape(json.getString("data"))?.split(",")?.get(i)?.replace("]", "")?.replace("\"", "")
-                                    cleanedData?.let { it1 -> data.add(it1) }
-                                    val adapter = CustomAdapter(context, data)
+                                    val deneme = removeQuotesAndUnescape(json.getString("data"))
+                                    val gson = Gson()
+                                    val cleanedDataNew : List<List<String>> = gson.fromJson(deneme, object : TypeToken<List<List<String>>>() {}.type)
+
+                                    val adapter = CustomAdapter(context, cleanedDataNew)
                                     recyclerView.layoutManager = LinearLayoutManager(context)
                                     recyclerView.adapter = adapter
                                     var uiHandler = Handler(Looper.getMainLooper())
