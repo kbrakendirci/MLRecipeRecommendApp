@@ -12,38 +12,53 @@
         android:id="@+id/recipeId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="2dp"
         android:hint="RECIPE ID"
-        android:inputType="numberSigned"
+
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp"></EditText>
 
-    <EditText
-        android:id="@+id/sortOrder"
+    <!--Create a TextInputLayout and choose the style,
+        for now we are choosing the OutlinedBox ExposedDropdownMenu -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:hint="SORT ORDER"
-        android:inputType="numberSigned"
-        app:layout_constraintTop_toBottomOf="@+id/recipeId"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_marginTop="6dp"
+        android:id="@+id/sortOrder"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
 
-    <Button
+        app:layout_constraintTop_toBottomOf="@+id/recipeId">
+
+        <!-- Inside text input layout add
+            an auto complete text view
+                and make its input type to none-->
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text="Choose Your Sorting Preference"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+       <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="CALL SERVICE"
         android:id="@+id/callButton"
         app:layout_constraintTop_toBottomOf="@+id/sortOrder">
-
-
     </Button>
-
 
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/constraintview1"
     android:layout_width="match_parent"
-    android:layout_height="500dp"
+    android:layout_height="550dp"
+    android:layout_marginTop="10dp"
     app:layout_constraintTop_toBottomOf="@+id/callButton">
 
     <androidx.recyclerview.widget.RecyclerView

@@ -56,5 +56,9 @@
     <string name="slide_4_title">Yapay zeka destekli mobil uygulama</string>
     <string name="slide_4_desc">Sizin için içeriğindeki yağ,şeker tuz oranlarına göre benzer ürünlerle yapılan  yemekleri önerir!</string>
 
+    <string-array name="Choose_Your_Sorting_Preference">
+        <item>Sort by Comment</item>
+        <item>Sort by Vote</item>
 
+    </string-array>
 </resources>
