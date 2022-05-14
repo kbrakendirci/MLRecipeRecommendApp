@@ -17,13 +17,19 @@
         android:theme="@style/Theme.ModernFoodRecipesApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ui.fragments.onboard.onBoardActivity"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:name=".ui.fragments.ingredientssearch.ActivityIngredientDetails"
+            android:exported="true"
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+            android:label="Details"
+            android:theme="@style/DetailsActivityStyle"/>
+        <activity
+            android:name=".ui.fragments.onboard.onBoardActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.Activity_Details"
@@ -32,9 +38,7 @@
             android:theme="@style/DetailsActivityStyle" />
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

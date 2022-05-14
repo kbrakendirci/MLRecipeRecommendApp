@@ -1,27 +1,27 @@
 package com.kotlinproject.modernfoodrecipesapp.adapters.ingredientsadapters
 
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-import com.kotlinproject.modernfoodrecipesapp.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 
 
-class ViewPagerAdapter(val list : List<String>) : RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder>() {
-    inner class ViewPagerViewHolder(itemView : View): RecyclerView.ViewHolder(itemView)
+class ViewPagerAdapter(
+    recipeId: Int,
+    private val fragments: ArrayList<Fragment>,
+    private val title: ArrayList<String>,
+    fm: FragmentManager
+): FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPagerViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_view_pager,parent,false)
-        return ViewPagerViewHolder(view)
-
+    override fun getCount(): Int {
+        return fragments.size
     }
 
-    override fun onBindViewHolder(holder: ViewPagerViewHolder, position: Int) {
-        val text = list[position]
-        holder.itemView.id
+    override fun getItem(position: Int): Fragment {
+
+        return fragments[position]
     }
 
-    override fun getItemCount(): Int {
-     return list.size
+    override fun getPageTitle(position: Int): CharSequence? {
+        return title[position]
     }
 }

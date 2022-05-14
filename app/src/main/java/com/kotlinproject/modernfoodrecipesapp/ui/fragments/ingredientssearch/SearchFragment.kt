@@ -80,7 +80,9 @@ class SearchFragment : Fragment() {
             }
         })
         recipesAdapter.setOnItemClickListener {
-
+            findNavController().navigate(
+                SearchFragmentDirections.actionSearchFragment2ToRecipeDetailsFragment(it.id )
+            )
         }
     }
 

@@ -66,6 +66,7 @@ class OverviewFragment : Fragment() {
             view.cheap_textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.green))
         }
 
-        return view  }
+        return view
+    }
 
 }

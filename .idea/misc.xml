@@ -16,14 +16,19 @@
         <entry key="app/src/main/res/drawable-v24/ic_star.xml" value="0.15462962962962962" />
         <entry key="app/src/main/res/drawable/ic_error_placeholder.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_details.xml" value="0.10677083333333333" />
+        <entry key="app/src/main/res/layout/activity_ingredient_details.xml" value="0.2078125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1609375" />
         <entry key="app/src/main/res/layout/activity_on_board.xml" value="0.11400651465798045" />
         <entry key="app/src/main/res/layout/dropdown_item.xml" value="0.17222222222222222" />
         <entry key="app/src/main/res/layout/fragment_favorite_recipes.xml" value="0.125" />
         <entry key="app/src/main/res/layout/fragment_food_joke.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/fragment_ingredient_recommend_instruction.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_ingredient_recommend_specify.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_ingredient_recomment_overview.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_ingredients.xml" value="0.17685185185185184" />
         <entry key="app/src/main/res/layout/fragment_instructions.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_overview.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_recipe_details.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_recipes.xml" value="0.175" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.1" />
         <entry key="app/src/main/res/layout/ic_food_joke.xml" value="0.175" />

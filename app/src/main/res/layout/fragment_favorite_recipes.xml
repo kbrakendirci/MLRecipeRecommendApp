@@ -7,14 +7,12 @@
     android:background="@color/lightGray"
     tools:context=".ui.fragments.favorite.FavoriteRecipesFragment">
 
-
     <EditText
         android:id="@+id/recipeId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:hint="RECIPE ID"
-
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp"></EditText>
 
