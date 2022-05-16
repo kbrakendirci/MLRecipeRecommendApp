@@ -17,11 +17,16 @@
         android:theme="@style/Theme.ModernFoodRecipesApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Auth.RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Auth.LoginActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.fragments.ingredientssearch.ActivityIngredientDetails"
             android:exported="true"
-
             android:label="Details"
-            android:theme="@style/DetailsActivityStyle"/>
+            android:theme="@style/DetailsActivityStyle" />
         <activity
             android:name=".ui.fragments.onboard.onBoardActivity"
             android:exported="true">
@@ -38,7 +43,7 @@
             android:theme="@style/DetailsActivityStyle" />
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -14,11 +14,20 @@
         <entry key="app/src/main/res/drawable-v24/ic_restaurant.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_sad.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_star.xml" value="0.15462962962962962" />
+        <entry key="app/src/main/res/drawable/btn_top.xml" value="0.3416666666666667" />
+        <entry key="app/src/main/res/drawable/ic_email.xml" value="0.3416666666666667" />
         <entry key="app/src/main/res/drawable/ic_error_placeholder.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_lock.xml" value="0.3416666666666667" />
+        <entry key="app/src/main/res/drawable/ic_login_bg.xml" value="0.3416666666666667" />
+        <entry key="app/src/main/res/drawable/ic_person.xml" value="0.3416666666666667" />
+        <entry key="app/src/main/res/drawable/ic_register_bg.xml" value="0.3416666666666667" />
+        <entry key="app/src/main/res/drawable/login_btn_bg.xml" value="0.3416666666666667" />
         <entry key="app/src/main/res/layout/activity_details.xml" value="0.10677083333333333" />
         <entry key="app/src/main/res/layout/activity_ingredient_details.xml" value="0.2078125" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.31145833333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1609375" />
         <entry key="app/src/main/res/layout/activity_on_board.xml" value="0.11400651465798045" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.3255208333333333" />
         <entry key="app/src/main/res/layout/dropdown_item.xml" value="0.17222222222222222" />
         <entry key="app/src/main/res/layout/fragment_favorite_recipes.xml" value="0.125" />
         <entry key="app/src/main/res/layout/fragment_food_joke.xml" value="0.175" />

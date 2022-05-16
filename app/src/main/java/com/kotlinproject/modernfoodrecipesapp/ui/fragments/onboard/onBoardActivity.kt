@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_on_board.*
 import android.R.string.no
 import android.content.Intent
 import androidx.appcompat.app.ActionBar
+import com.kotlinproject.modernfoodrecipesapp.Auth.LoginActivity
 import com.kotlinproject.modernfoodrecipesapp.ui.MainActivity
 
 
@@ -59,7 +60,7 @@ class onBoardActivity : AppCompatActivity() {
                     TOTAL_SLIDE - 1 -> {
                         btn_next.text = getString(R.string.finish)
                         btn_next.setOnClickListener {
-                                val i = Intent(applicationContext,MainActivity::class.java)
+                                val i = Intent(applicationContext,LoginActivity::class.java)
                                 startActivity(i)
                                 finish()
                             }
