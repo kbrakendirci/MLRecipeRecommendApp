@@ -30,16 +30,15 @@
         android:background="@android:color/white" />
 
     <Button
-        android:backgroundTint="#FFA845"
         android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:backgroundTint="#FFA845"
         android:fontFamily="serif"
         android:text="@string/next"
-        android:textColor="@android:color/white"
-       />
+        android:textColor="@android:color/white" />
 
     <Button
         android:backgroundTint="#FFA845"
