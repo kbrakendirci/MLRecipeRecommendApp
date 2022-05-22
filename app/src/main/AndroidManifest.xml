@@ -17,13 +17,24 @@
         android:theme="@style/Theme.ModernFoodRecipesApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".welcome.WelcomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+        </activity>
+
+        <activity
             android:name=".Auth.RegisterActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Auth.LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".ui.fragments.ingredientssearch.ActivityIngredientDetails"
             android:exported="true"
@@ -32,11 +43,7 @@
         <activity
             android:name=".ui.fragments.onboard.onBoardActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.Activity_Details"
