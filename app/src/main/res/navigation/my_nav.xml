@@ -73,5 +73,10 @@
             android:name="result"
             app:argType="com.kotlinproject.modernfoodrecipesapp.model.Result" />
     </activity>
+    <fragment
+        android:id="@+id/profilFragment"
+        android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.profil.ProfilFragment"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profil" />
 
 </navigation>

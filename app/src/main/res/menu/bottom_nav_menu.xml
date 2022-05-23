@@ -11,4 +11,8 @@
     <item android:id="@+id/IngredientsFragment"
         android:title="@string/food_joke_fragment"
         android:icon="@drawable/ingredient"/>
+
+    <item android:id="@+id/profilFragment"
+        android:title="@string/food_joke_fragment"
+        android:icon="@drawable/ingredient"/>
 </menu>
