@@ -78,5 +78,10 @@
         android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.profil.ProfilFragment"
         android:label="fragment_profil"
         tools:layout="@layout/fragment_profil" />
+    <fragment
+        android:id="@+id/fragmentNltkrecommend"
+        android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.nltrecommend.FragmentNltkrecommend"
+        android:label="fragment_nltkrecommend"
+        tools:layout="@layout/fragment_nltkrecommend" />
 
 </navigation>

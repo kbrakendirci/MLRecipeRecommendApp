@@ -129,7 +129,7 @@ private fun setupDropdown(){
                 .readTimeout(50, TimeUnit.SECONDS)
                 .build()
 
-            val BASE_URL = "http://192.168.1.11:4000?recipe_id="+recipeId+"&sort_order="+sortorder
+            val BASE_URL ="http://192.168.1.17:4000/?recipe_id="+recipeId+"&sort_order="+sortorder
 
             val request = Request.Builder()
                 .url(BASE_URL)

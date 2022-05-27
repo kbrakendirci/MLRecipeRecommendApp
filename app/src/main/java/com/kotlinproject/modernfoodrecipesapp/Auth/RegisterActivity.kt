@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.kotlinproject.modernfoodrecipesapp.R
 import kotlinx.android.synthetic.main.activity_register.*
@@ -55,11 +56,27 @@ class RegisterActivity : AppCompatActivity() {
                 }
             }
     }
+    private fun saveFireStore(firstName: String, userEmail: String, userUid : String) {
+        val db = FirebaseFirestore.getInstance()
+        val user: MutableMap<String, Any> = HashMap()
+        user["firstname"] = firstName
+        user["email"] = userEmail
+        user["count"]= 0
+        user["favorites"]= listOf("İstanbul", "Tekirdağ", "Ankara", "İzmir")
+        db.collection("users").document(userUid)
+            .set(user)
+            .addOnSuccessListener {
+                sendConfirmationEmail()
+                Toast.makeText(this, "You Signed In successfully", Toast.LENGTH_LONG).show()
+
+            }
+            .addOnFailureListener {
+                auth.currentUser?.delete()
+            }
+    }
     fun updateUI(account: FirebaseUser?) {
         if (account != null) {
-            Toast.makeText(this, "You Signed In successfully", Toast.LENGTH_LONG).show()
-            sendConfirmationEmail()
-            FirebaseAuth.getInstance().signOut()
+            saveFireStore(etRegisterName.text.toString(),etRegisterEmail.text.toString(), account.uid)
             onBackPressed()
 
         } else {
@@ -75,6 +92,8 @@ class RegisterActivity : AppCompatActivity() {
                     Toast.makeText(this@RegisterActivity,
                         "Verification email sent to " + User.getEmail(),
                         Toast.LENGTH_SHORT).show()
+                    FirebaseAuth.getInstance().signOut()
+                    finish()
                 } else {
                     Log.e(ContentValues.TAG, "sendEmailVerification", task.exception)
                     Toast.makeText(this@RegisterActivity,

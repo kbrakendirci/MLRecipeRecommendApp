@@ -54,7 +54,8 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
         finish()
     }
     return super.onOptionsItemSelected(item)
-}}
+}
+}
 
 private fun Bundle.putString(s: String) {
 

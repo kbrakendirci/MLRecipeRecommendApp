@@ -31,13 +31,14 @@
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.165" />
         <entry key="app/src/main/res/layout/dropdown_item.xml" value="0.17222222222222222" />
-        <entry key="app/src/main/res/layout/fragment_favorite_recipes.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_favorite_recipes.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_food_joke.xml" value="0.175" />
         <entry key="app/src/main/res/layout/fragment_ingredient_recommend_instruction.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_ingredient_recommend_specify.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_ingredient_recomment_overview.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_ingredients.xml" value="0.17685185185185184" />
         <entry key="app/src/main/res/layout/fragment_instructions.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_nltkrecommend.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_overview.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_profil.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_recipe_details.xml" value="0.1" />
@@ -50,6 +51,7 @@
         <entry key="app/src/main/res/layout/layout_slide.xml" value="0.165" />
         <entry key="app/src/main/res/layout/list_item_recipe.xml" value="0.25" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.16574074074074074" />
+        <entry key="app/src/main/res/layout/nltk_recommend_itemlist.xml" value="0.1" />
         <entry key="app/src/main/res/layout/placeholder_row_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/recipes_bottom_sheet.xml" value="0.1" />
         <entry key="app/src/main/res/layout/recipes_row_layout.xml" value="0.1" />
