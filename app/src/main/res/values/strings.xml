@@ -44,21 +44,25 @@
     <string name="finish">FINISH</string>
     <string name="precious">PREVIOUS</string>
 
-    <string name="slide_1_title">Dolabta Ne Var?</string>
-    <string name="slide_1_desc">Uygulamamız dolabınızda kalan malzelerle yapabileceğiniz yemekleri size öneriyor</string>
+    <string name="slide_1_title">Malzemeye göre yemek tarifleri!</string>
+    <string name="slide_1_desc">Mutfak Dolabınızda mevcut olan malzemeler ile yapabileceğiniz  yemekleri ve tatlıları bulun, tarifleri uygulayın.
+</string>
 
-    <string name="slide_2_title">Diyet Tercihlerinize Göre Yemek Tarifleri Bulun! </string>
-    <string name="slide_2_desc">Belirli bir diyeti takip etmek isteyenlerin işini kolaylaştırabilecek bir mobil uygulama!</string>
+    <string name="slide_2_title">Diyet Menülerinizi Canlandırmaya Ne Dersiniz? </string>
+    <string name="slide_2_desc"> Beslenme Tipinize  Uygun Pratik Yemek Tariflerini Uygulamamızda Bulabilirsiniz!</string>
 
-    <string name="slide_3_title">Yapay Zeka Destekli Yemek Öneri Uygulaması</string>
+    <string name="slide_3_title">Makine Öğrenmesi Destekli Yemek Öneri Uygulaması</string>
     <string name="slide_3_desc">Sizin için içeriğindeki yağ,şeker tuz oranlarına göre benzer ürünlerle yapılan  yemekleri önerir!</string>
 
-    <string name="slide_4_title">Yapay zeka destekli mobil uygulama</string>
-    <string name="slide_4_desc">Sizin için içeriğindeki yağ,şeker tuz oranlarına göre benzer ürünlerle yapılan  yemekleri önerir!</string>
+    <string name="slide_4_title">Siz Tarif edin Biz Bulalım</string>
+    <string name="slide_4_desc">Yapmak İstediğiniz Yemeği Anlatın Yapabiliceniz Yemekleri Önerelim!</string>
 
     <string-array name="Choose_Your_Sorting_Preference">
         <item>Sort by Comment</item>
         <item>Sort by Vote</item>
-
     </string-array>
+
+    <string name="forgotPassword"><b><i>I forgot my password</i></b></string>
+    <string name="Label"><b><i>Cook smart</i></b></string>
+
 </resources>

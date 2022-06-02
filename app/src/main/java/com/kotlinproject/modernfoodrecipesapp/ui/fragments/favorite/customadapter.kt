@@ -1,5 +1,6 @@
 package com.kotlinproject.ui.fragments.favorite
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,8 @@ import android.widget.TextView
 import java.util.ArrayList
 import androidx.recyclerview.widget.RecyclerView
 import com.kotlinproject.modernfoodrecipesapp.R
+import com.kotlinproject.modernfoodrecipesapp.ui.MainActivity
+import com.kotlinproject.modernfoodrecipesapp.ui.fragments.favorite.MlRecommendDetails
 import com.squareup.picasso.Picasso
 
 class CustomAdapter(private val context: Context?, private val list: List<List<String>>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -44,6 +47,10 @@ class CustomAdapter(private val context: Context?, private val list: List<List<S
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as ViewHolder).bind(position)
+        holder.itemView.setOnClickListener { v ->
+            val intent = Intent(v.context, MlRecommendDetails::class.java)
+            v.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

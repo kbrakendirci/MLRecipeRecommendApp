@@ -22,7 +22,7 @@ class onBoardActivity : AppCompatActivity() {
 
 
     companion object {
-        const val TOTAL_SLIDE = 3
+        const val TOTAL_SLIDE = 4
         var CURRENT_SLIDE = 0
     }
 

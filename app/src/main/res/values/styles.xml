@@ -5,6 +5,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">#FFA845</item>
+        <item name="colorControlActivated">#FFA845</item>
+        <item name="colorControlHighlight">#FFA845</item>
     </style>
 
     <style name="CustomChipStyle" parent="Widget.MaterialComponents.Chip.Filter">
@@ -31,6 +34,12 @@
     <style name="CustomTabTextStyle" parent="TextAppearance.Design.Tab">
         <item name="android:textColor">@color/white</item>
     </style>
+    <style name="Custom_textinputlayout_filledbox" parent="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <!-- The color of the label when it is collapsed and the text field is active -->
+        <item name="hintTextColor">?attr/colorPrimary</item>
 
+        <!-- The color of the label in all other text field states (such as resting and disabled) -->
+        <item name="android:textColorHint">@color/loginedittex_color</item>
+    </style>
 
 </resources>

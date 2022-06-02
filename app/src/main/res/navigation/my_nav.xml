@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/favoriteRecipesFragment">
+    app:startDestination="@id/recipesFragment">
     <fragment
         android:id="@+id/recipesFragment"
         android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.recipes.RecipesFragment"
@@ -74,9 +74,9 @@
             app:argType="com.kotlinproject.modernfoodrecipesapp.model.Result" />
     </activity>
     <fragment
-        android:id="@+id/profilFragment"
+        android:id="@+id/Profil"
         android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.profil.ProfilFragment"
-        android:label="fragment_profil"
+        android:label="Profil"
         tools:layout="@layout/fragment_profil" />
     <fragment
         android:id="@+id/fragmentNltkrecommend"

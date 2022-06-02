@@ -17,16 +17,17 @@
         android:theme="@style/Theme.ModernFoodRecipesApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Auth.ForgotMyPassword"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".ui.fragments.favorite.MlRecommendDetails"
+            android:exported="true" />
+        <activity
             android:name=".welcome.WelcomeActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-
         <activity
             android:name=".Auth.RegisterActivity"
             android:exported="true"
@@ -42,9 +43,7 @@
             android:theme="@style/DetailsActivityStyle" />
         <activity
             android:name=".ui.fragments.onboard.onBoardActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ui.Activity_Details"
             android:exported="true"
@@ -52,9 +51,11 @@
             android:theme="@style/DetailsActivityStyle" />
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true" >
+            android:exported="true"> <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-        </activity>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
     </application>
 
 </manifest>

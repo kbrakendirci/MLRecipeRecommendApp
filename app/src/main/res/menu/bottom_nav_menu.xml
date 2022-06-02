@@ -5,18 +5,18 @@
         android:icon="@drawable/ic_menu_book"/>
 
     <item android:id="@+id/favoriteRecipesFragment"
-        android:title="@string/favorite_recipes_fragment"
+        android:title="Find Recipe"
         android:icon="@drawable/restaurant"/>
 
     <item android:id="@+id/IngredientsFragment"
-        android:title="@string/food_joke_fragment"
-        android:icon="@drawable/ingredient"/>
-
-    <item android:id="@+id/profilFragment"
-        android:title="@string/food_joke_fragment"
+        android:title="ML Recommend"
         android:icon="@drawable/ingredient"/>
     <item
         android:id="@+id/fragmentNltkrecommend"
-        android:title="@string/food_joke_fragment"
-        android:icon="@drawable/ingredient"/>
+        android:title="ML Recommend"
+        android:icon="@drawable/machinelearning"/>
+
+    <item android:id="@+id/Profil"
+        android:title="Profil"
+        android:icon="@drawable/settings"/>
 </menu>

@@ -1,5 +1,6 @@
 package com.kotlinproject.modernfoodrecipesapp.ui.fragments.favorite
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -16,6 +17,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.kotlinproject.modernfoodrecipesapp.R
+import com.kotlinproject.modernfoodrecipesapp.adapters.ingredientsadapters.RecipesAdapter
+import com.kotlinproject.modernfoodrecipesapp.ui.MainActivity
 import com.kotlinproject.ui.fragments.favorite.CustomAdapter
 import kotlinx.android.synthetic.main.dropdown_item.*
 import kotlinx.android.synthetic.main.fragment_favorite_recipes.*
@@ -28,8 +31,8 @@ import java.io.*
 import java.util.concurrent.TimeUnit
 
 class FavoriteRecipesFragment : Fragment() {
-    
 
+    private lateinit var customadapter: CustomAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -122,7 +125,6 @@ private fun setupDropdown(){
             var recyclerView = recycler_view
             val data = arrayListOf<String>();
 
-
             val client = OkHttpClient.Builder()
                 .connectTimeout(50, TimeUnit.SECONDS)
                 .writeTimeout(50, TimeUnit.SECONDS)
@@ -169,6 +171,8 @@ private fun setupDropdown(){
                             Log.e("Error", e.localizedMessage);
                         }
                     }
+
+
 
                 }
             })

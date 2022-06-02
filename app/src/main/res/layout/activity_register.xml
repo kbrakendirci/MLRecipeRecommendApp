@@ -5,6 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Auth.RegisterActivity">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/registerPageMainLayout"
+    >
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,11 +19,10 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Recipe Book"
+        android:layout_marginTop="122dp"
+        android:text="@string/Label"
         android:textColor="#FFA845"
         android:textSize="42sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,6 +40,7 @@
         android:id="@+id/cardView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="#f4ece4"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         app:cardCornerRadius="24dp"
@@ -45,6 +50,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:background="#f4ece4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -52,7 +60,6 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="6dp"
                 android:paddingStart="6dp"
                 android:paddingEnd="6dp">
 
@@ -63,6 +70,22 @@
                     android:drawableStart="@drawable/ic_person"
                     android:drawablePadding="6dp"
                     android:hint="Name"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etRegisterSurName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_person"
+                    android:drawablePadding="6dp"
+                    android:hint="SurName"
                     android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,9 +108,8 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="6dp"
-                android:layout_marginBottom="24dp"
                 android:paddingStart="6dp"
                 android:paddingEnd="6dp"
                 app:passwordToggleEnabled="true">
@@ -101,45 +123,63 @@
                     android:hint="Password"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                app:passwordToggleEnabled="true"
+                android:layout_marginBottom="5dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etRegisterPasswordAgain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:drawableStart="@drawable/ic_lock"
+                    android:drawablePadding="6dp"
+                    android:hint="Password Again"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
         <RelativeLayout
-
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
-
+        android:layout_marginTop="35dp"
         app:layout_constraintEnd_toEndOf="@+id/cardView2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cardView2"
         app:layout_constraintTop_toBottomOf="@+id/cardView2"
         app:layout_constraintVertical_bias="0.648">
 
-        <Button
-            android:id="@+id/RegisterBtn"
-            android:layout_height="wrap_content"
-            android:layout_width="150dp"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/btn_top"
-            android:backgroundTint="#FFA845"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="Register"
-            android:textColor="@android:color/white"
-            android:textSize="18sp" />
+            <Button
+                android:id="@+id/RegisterBtn"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/btn_top"
+                android:backgroundTint="#FFA845"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="Register"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/LoginBtn"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:background="@drawable/btn_top"
-            android:backgroundTint="#FFA845"
-            android:text="LOGIN"
-            android:textColor="@android:color/white"
-            android:textSize="18sp" />
+            <Button
+                android:id="@+id/LoginfromRegisterBtn"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/btn_top"
+                android:backgroundTint="#FFA845"
+                android:text="LOGIN"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
     </RelativeLayout>
-
+</androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
