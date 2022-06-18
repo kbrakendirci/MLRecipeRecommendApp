@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_forgot_my_password.*
 class ForgotMyPassword : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_forgot_my_password)
+        setContentView(R.layout.forgotpassword)
         closeKeyboard(forgotPasswordMainLayout)
 
         forgotPasswordButton.setOnClickListener(){

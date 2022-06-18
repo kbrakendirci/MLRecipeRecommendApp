@@ -4,17 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".ui.fragments.profil.ProfilFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/cdMyAccount"
+        tools:layout_editor_absoluteX="-102dp">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="280dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_marginLeft="40dp">
+        <ImageView
+            android:layout_marginRight="150dp"
+            android:id="@+id/logo"
+            android:layout_width="56dp"
+            android:layout_height="36dp"
+            android:background="@drawable/chef"
+             app:layout_constraintEnd_toEndOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="40dp"
+        android:gravity="center"
+
+        android:text="@string/Label"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="@+id/logo" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </Toolbar>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cdMyAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="52dp"
+        android:layout_marginRight="10dp"
         android:padding="10dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
@@ -52,8 +85,7 @@
                 android:layout_height="26dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="5dp"
-                android:background="@drawable/user"
-        />
+                android:background="@drawable/user" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

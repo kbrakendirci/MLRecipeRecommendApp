@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,6 +20,7 @@ import com.google.gson.reflect.TypeToken
 import com.kotlinproject.modernfoodrecipesapp.R
 import com.kotlinproject.modernfoodrecipesapp.adapters.ingredientsadapters.RecipesAdapter
 import com.kotlinproject.modernfoodrecipesapp.ui.MainActivity
+import com.kotlinproject.modernfoodrecipesapp.utils.loadingDialog
 import com.kotlinproject.ui.fragments.favorite.CustomAdapter
 import kotlinx.android.synthetic.main.dropdown_item.*
 import kotlinx.android.synthetic.main.fragment_favorite_recipes.*
@@ -29,22 +31,24 @@ import org.apache.commons.text.StringEscapeUtils
 import org.json.JSONObject
 import java.io.*
 import java.util.concurrent.TimeUnit
+import android.app.ProgressDialog
+
+
+
 
 class FavoriteRecipesFragment : Fragment() {
 
     private lateinit var customadapter: CustomAdapter
+    lateinit var loadingDialog : loadingDialog
     override fun onCreate(savedInstanceState: Bundle?) {
-
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         super.onCreate(savedInstanceState)
-
         }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setupDropdown()
         button()
         super.onViewCreated(view, savedInstanceState)
-
-
     }
 
 
@@ -68,8 +72,10 @@ class FavoriteRecipesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        (activity as AppCompatActivity)
+        loadingDialog = loadingDialog(requireActivity())
 
+        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_favorite_recipes, container, false)
     }
     private fun removeQuotesAndUnescape(uncleanJson: String): String? {
@@ -119,6 +125,7 @@ private fun setupDropdown(){
 
     private fun button(){
         callButton.setOnClickListener {
+            loadingDialog.startLoadingDialog()
             val recipeName =recipeId.text
             val sortorder = selectButton()
             val recipeId=fillHashMap("$recipeName")
@@ -131,7 +138,7 @@ private fun setupDropdown(){
                 .readTimeout(50, TimeUnit.SECONDS)
                 .build()
 
-            val BASE_URL ="http://192.168.1.17:4000/?recipe_id="+recipeId+"&sort_order="+sortorder
+            val BASE_URL ="http://192.168.43.121:4000/?recipe_id="+recipeId+"&sort_order="+sortorder
 
             val request = Request.Builder()
                 .url(BASE_URL)
@@ -147,10 +154,12 @@ private fun setupDropdown(){
                         val jsonString = response.body?.string()
 
                         try {
+                            loadingDialog.dismisDialog()
                             activity?.runOnUiThread(Runnable {
                                 val json = JSONObject(jsonString)
                                 //ekrana 1 resim bastırmak için 1 yaptık i yapınca sonuç alamıyorum.Amacım aslında 10 tane recipeı ve isimlerini göstermek
                                 for (i in 0..10) {
+                                    loadingDialog.dismisDialog()
                                     val cleanedData = removeQuotesAndUnescape(json.getString("data"))?.split(",")?.get(i)?.replace("]", "")?.replace("\"", "")
                                     val deneme = removeQuotesAndUnescape(json.getString("data"))
                                     val gson = Gson()
@@ -168,15 +177,16 @@ private fun setupDropdown(){
                                 } })
                         }
                         catch (e: IOException){
-                            Log.e("Error", e.localizedMessage);
+                            loadingDialog.dismisDialog()
+                            Toast.makeText(context,"An error has occurred, try again",Toast.LENGTH_SHORT).show()
                         }
                     }
 
-
-
                 }
             })
+
         }
     }
+
 }
 

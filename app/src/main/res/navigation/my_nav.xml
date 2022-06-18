@@ -11,6 +11,7 @@
         tools:layout="@layout/fragment_recipes" >
         <action
         android:id="@+id/action_recipesFragment_to_recipesBottomSheet"
+            android:label="Smart Cook"
         app:destination="@id/recipesBottomSheet" />
         <argument
             android:name="backFromBottomSheet"
@@ -24,6 +25,7 @@
         android:id="@+id/favoriteRecipesFragment"
         android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.favorite.FavoriteRecipesFragment"
         android:label="Favorites"
+        android:theme="@style/AppBaseTheme"
         tools:layout="@layout/fragment_favorite_recipes" />
     <fragment
         android:id="@+id/IngredientsFragment"
@@ -34,15 +36,25 @@
             android:id="@+id/action_searchFragment2_to_recipeDetailsFragment"
             app:destination="@id/recipeDetailsFragment" />
     </fragment>
-    /*
-        android:id="@+id/recipeDetailsFragment"
-        android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.ingredientssearch.RecipeDetailsFragment"
-        android:label="fragment_recipe_details"
-        tools:layout="@layout/activity_ingredient_details" >
+    <fragment
+        android:id="@+id/Profil"
+        android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.profil.ProfilFragment"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        tools:layout="@layout/fragment_profil" >
 
-            android:name="recipeId"
-            app:argType="integer"
-    */
+        <action
+            android:id="@+id/action_navigation_authentication_to_my_Account"
+            app:destination="@id/accountDetails" />
+        <action
+            android:id="@+id/action_navigation_authentication_to_change_My_Password"
+            app:destination="@id/changeMyPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentNltkrecommend"
+        android:theme="@style/AppBaseTheme"
+        android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.nltrecommend.FragmentNltkrecommend"
+        tools:layout="@layout/fragment_nltkrecommend" />
+
     <activity
         android:id="@+id/recipeDetailsFragment"
         android:theme="@style/AppTheme.NoActionBar"
@@ -73,15 +85,14 @@
             android:name="result"
             app:argType="com.kotlinproject.modernfoodrecipesapp.model.Result" />
     </activity>
-    <fragment
-        android:id="@+id/Profil"
-        android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.profil.ProfilFragment"
-        android:label="Profil"
-        tools:layout="@layout/fragment_profil" />
-    <fragment
-        android:id="@+id/fragmentNltkrecommend"
-        android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.nltrecommend.FragmentNltkrecommend"
-        android:label="fragment_nltkrecommend"
-        tools:layout="@layout/fragment_nltkrecommend" />
+    <activity
+        android:id="@+id/changeMyPassword"
+        android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.profil.ChangeMyPassword"
+        tools:layout="@layout/activity_change_my_password" />
+    <activity
+        android:id="@+id/accountDetails"
+        android:name="com.kotlinproject.modernfoodrecipesapp.ui.fragments.profil.AccountDetails"
+        tools:layout="@layout/activity_account_details" />
+
 
 </navigation>

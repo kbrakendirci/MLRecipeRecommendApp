@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -22,14 +23,20 @@ import org.apache.commons.text.StringEscapeUtils
 import org.json.JSONObject
 import java.io.IOException
 import java.util.concurrent.TimeUnit
+import androidx.appcompat.app.AppCompatActivity
+import com.kotlinproject.modernfoodrecipesapp.utils.loadingDialog
 
 
 class FragmentNltkrecommend : Fragment() {
+    lateinit var loadingDialog : loadingDialog
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-        button()
+          button()
         super.onViewCreated(view, savedInstanceState)
 
 
@@ -39,15 +46,17 @@ class FragmentNltkrecommend : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        (activity as AppCompatActivity)
+        loadingDialog = loadingDialog(requireActivity())
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_nltkrecommend, container, false)
     }
     private fun button(){
-
         var recyclerView = recyclerviewdeneme
         val data = arrayListOf<String>();
 
         callButton.setOnClickListener {
+            loadingDialog.startLoadingDialog()
             val recipeSuggest =recipesuggest.text
 
             val client = OkHttpClient.Builder()
@@ -56,7 +65,7 @@ class FragmentNltkrecommend : Fragment() {
                 .readTimeout(50, TimeUnit.SECONDS)
                 .build()
 
-            val BASE_URL ="http://192.168.1.11:4000/hel?username="+recipeSuggest
+            val BASE_URL ="http://192.168.43.121:4000/hel?username="+recipeSuggest
 
             val request = Request.Builder()
                 .url(BASE_URL)
@@ -72,10 +81,12 @@ class FragmentNltkrecommend : Fragment() {
                         val jsonString = response.body?.string()
 
                         try {
+                            loadingDialog.dismisDialog()
                             activity?.runOnUiThread(Runnable {
                                 val json = JSONObject(jsonString)
                                 //ekrana 1 resim bastırmak için 1 yaptık i yapınca sonuç alamıyorum.Amacım aslında 10 tane recipeı ve isimlerini göstermek
                                 for (i in 0..10) {
+                                    loadingDialog.dismisDialog()
                                     val deneme = removeQuotesAndUnescape(json.getString("data"))
                                     val gson = Gson()
                                     val cleanedDataNew : List<List<String>> = gson.fromJson(deneme, object : TypeToken<List<List<String>>>() {}.type)
@@ -86,12 +97,14 @@ class FragmentNltkrecommend : Fragment() {
                                 }) }
 
                         catch (e: IOException){
-                            Log.e("Error", e.localizedMessage);
+                            loadingDialog.dismisDialog()
+                            Toast.makeText(context,"An error has occurred, try again", Toast.LENGTH_SHORT).show()
                         }
                     }
 
                 }
             })
+
         }
     }
     private fun removeQuotesAndUnescape(uncleanJson: String): String? {

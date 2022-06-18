@@ -45,9 +45,6 @@ class ActivityIngredientDetails : AppCompatActivity() {
         tabLayout.setupWithViewPager(viewPager)
 
     }
-
-
-
 //Sayfaya geri dönüş için
 override fun onOptionsItemSelected(item: MenuItem): Boolean {
     if (item.itemId == android.R.id.home) {

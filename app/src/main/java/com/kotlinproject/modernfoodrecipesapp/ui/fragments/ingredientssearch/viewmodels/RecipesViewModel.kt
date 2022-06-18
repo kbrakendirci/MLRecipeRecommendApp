@@ -40,7 +40,6 @@ class RecipesViewModel: ViewModel() {
             }
         }
         return Resource.Error(response.message())
-
     }
 
     private fun handleRecipeInformationResponse(response: Response<RecipeDetailsResponse>): Resource<RecipeDetailsResponse> {

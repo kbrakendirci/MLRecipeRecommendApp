@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,16 +21,17 @@ import com.kotlinproject.modernfoodrecipesapp.databinding.FragmentSearchBinding
 import com.kotlinproject.modernfoodrecipesapp.util.Constant
 import com.kotlinproject.modernfoodrecipesapp.util.Constant.Companion.SEACH_RECIPES_TIME_DELAY
 import com.kotlinproject.modernfoodrecipesapp.util.Resource
+import com.kotlinproject.modernfoodrecipesapp.utils.loadingDialog
 
 
 import com.kotlinproject.myapplication.ui.viewmodels.RecipesViewModel
-
+import kotlinx.android.synthetic.main.fragment_search.*
 
 
 class SearchFragment : Fragment() {
 
     private val viewModel: RecipesViewModel by viewModels()
-
+    lateinit var loadingDialog : loadingDialog
     private lateinit var recipesAdapter: RecipesAdapter
     private var _binding: FragmentSearchBinding? = null
 
@@ -40,6 +42,8 @@ class SearchFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        (activity as AppCompatActivity)
+        loadingDialog = loadingDialog(requireActivity())
         // Inflate the layout for this fragment
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         return binding.root
@@ -50,9 +54,11 @@ class SearchFragment : Fragment() {
         setupRecyclerView()
 
         var job: Job? = null
+
         binding.search.addTextChangedListener { editable ->
             job?.cancel()
-            job = MainScope().launch {
+            callButton.setOnClickListener {
+               job = MainScope().launch {
                 delay(SEACH_RECIPES_TIME_DELAY)
                 editable?.let {
                     if (editable.toString().isNotEmpty()) {
@@ -61,10 +67,13 @@ class SearchFragment : Fragment() {
                 }
             }
         }
+
+        }
+
         viewModel.searchedRecipesResponse.observe(viewLifecycleOwner, { response ->
             when (response) {
                 is Resource.Success -> {
-                    hideProgressBar()
+                    loadingDialog.dismisDialog()
                     response.data?.let { recipesResponse ->
                         recipesAdapter.differ.submitList(recipesResponse)
                     }
@@ -75,7 +84,8 @@ class SearchFragment : Fragment() {
                     }
                 }
                 is Resource.Loading -> {
-                    showProgressBar()
+                    loadingDialog.startLoadingDialog()
+
                 }
             }
         })
@@ -84,6 +94,7 @@ class SearchFragment : Fragment() {
                 SearchFragmentDirections.actionSearchFragment2ToRecipeDetailsFragment(it.id )
             )
         }
+
     }
 
 

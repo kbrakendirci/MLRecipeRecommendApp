@@ -6,26 +6,64 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/lightGray"
     tools:context=".ui.fragments.favorite.FavoriteRecipesFragment">
-<androidx.cardview.widget.CardView
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/recipeCardView"
+        tools:layout_editor_absoluteX="-102dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40dp">
+            <ImageView
+                android:layout_marginRight="150dp"
+                android:id="@+id/logo"
+                android:layout_width="56dp"
+                android:layout_height="36dp"
+                android:background="@drawable/chef"
+                app:layout_constraintEnd_toEndOf="@+id/title" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:gravity="center"
+                android:text="@string/Label"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                app:layout_constraintStart_toStartOf="@+id/logo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </Toolbar>
+
+
+    <androidx.cardview.widget.CardView
     android:id="@+id/recipeCardView"
     android:layout_width="match_parent"
     android:layout_height="60dp"
-    android:layout_marginTop="20dp"
-    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginTop="40dp"
+    app:strokeWidth="2dp"
+    app:strokeColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
     android:layout_margin="15dp"
     app:cardBackgroundColor="@color/lightGray"
     tools:ignore="MissingConstraints"
     >
-    <EditText
-        android:id="@+id/recipeId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:hint="Writing Recipe Name"
-        android:textColorHint="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp"></EditText>
-</androidx.cardview.widget.CardView>
+
+        <EditText
+            android:id="@+id/recipeId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:hint="Writing Recipe Name"
+            android:textColorHint="@color/black"
+            app:layout_constraintTop_toTopOf="@+id/toolbar"
+            tools:layout_editor_absoluteX="0dp"></EditText>
+    </androidx.cardview.widget.CardView>
     <!--Create a TextInputLayout and choose the style,
         for now we are choosing the OutlinedBox ExposedDropdownMenu -->
     <com.google.android.material.textfield.TextInputLayout
@@ -37,7 +75,6 @@
         android:id="@+id/sortOrder"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-
         app:layout_constraintTop_toBottomOf="@+id/recipeCardView">
 
         <!-- Inside text input layout add
@@ -55,14 +92,15 @@
 
     </com.google.android.material.textfield.TextInputLayout>
        <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Find Your Food  🕵🏻‍♀️"
-        android:id="@+id/callButton"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Find Your Food  🕵🏻‍♀️"
+           android:textColor="@color/white"
+           android:id="@+id/callButton"
            android:layout_margin="15dp"
            android:elevation="10dp"
            android:background="@drawable/btn_top"
-        app:layout_constraintTop_toBottomOf="@+id/sortOrder">
+           app:layout_constraintTop_toBottomOf="@+id/sortOrder">
     </Button>
 
 

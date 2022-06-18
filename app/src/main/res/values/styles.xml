@@ -41,5 +41,7 @@
         <!-- The color of the label in all other text field states (such as resting and disabled) -->
         <item name="android:textColorHint">@color/loginedittex_color</item>
     </style>
-
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light" >
+        <item name="android:windowNoTitle">true</item>   <!-- //this -->
+    </style>
 </resources>

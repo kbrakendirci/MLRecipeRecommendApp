@@ -29,6 +29,8 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
         setup()
     }
+
+
     override fun onBackPressed() {
         startActivity(Intent(this,LoginActivity::class.java))
         overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right)
@@ -83,17 +85,16 @@ class RegisterActivity : AppCompatActivity() {
             }
     }
 
-    private fun saveFireStore(firstName: String, userEmail: String, userUid : String) {
+    private fun saveFireStore(firstName: String,secondName: String, userEmail: String, userUid : String) {
         val db = FirebaseFirestore.getInstance()
         val user: MutableMap<String, Any> = HashMap()
         user["firstname"] = firstName
+        user["secondname"] = secondName
         user["email"] = userEmail
         user["count"]= 0
-        user["favorites"]= listOf("İstanbul", "Tekirdağ", "Ankara", "İzmir")
-        db.collection("users").document(userUid)
+          db.collection("users").document(userUid)
             .set(user)
             .addOnSuccessListener {
-                sendConfirmationEmail()
                 Toast.makeText(this, "You Signed In successfully", Toast.LENGTH_LONG).show()
 
             }
@@ -103,7 +104,8 @@ class RegisterActivity : AppCompatActivity() {
     }
     fun updateUI(account: FirebaseUser?) {
         if (account != null) {
-            saveFireStore(etRegisterName.text.toString(),etRegisterEmail.text.toString(), account.uid)
+            sendConfirmationEmail()
+            saveFireStore(etRegisterName.text.toString(),etRegisterSurName.text.toString(),etRegisterEmail.text.toString(), account.uid)
             onBackPressed()
         } else {
             loadingDialog.dismisDialog()
