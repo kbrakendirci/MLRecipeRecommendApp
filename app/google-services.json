@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "977738311160",
+    "project_id": "modernfoodapp",
+    "storage_bucket": "modernfoodapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977738311160:android:3551b578f604a9e8a3a20d",
+        "android_client_info": {
+          "package_name": "com.kotlinproject.modernfoodrecipesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "977738311160-sofqebes6u0vrtkld54tc053ss39d8lc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADKic3gOR-SEGX-zx1pryLXy5GPGkpNh0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "977738311160-sofqebes6u0vrtkld54tc053ss39d8lc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

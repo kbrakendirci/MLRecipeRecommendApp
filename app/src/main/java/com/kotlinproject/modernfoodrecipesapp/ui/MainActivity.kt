@@ -1,7 +1,9 @@
 package com.kotlinproject.modernfoodrecipesapp.ui
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -19,6 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // If the Android version is lower than Jellybean, use this call to hide
+        // the status bar.
         setContentView(R.layout.activity_main)
 
         navController = findNavController(R.id.navHostFragment)
@@ -26,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.recipesFragment,
                 R.id.favoriteRecipesFragment,
-                R.id.foodJokeFragment
+                R.id.IngredientsFragment
             )
         )
 

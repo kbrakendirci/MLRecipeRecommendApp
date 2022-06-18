@@ -34,6 +34,7 @@ class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>
         holder.itemView.ingredient_unit.text = ingredientsList[position].unit
         holder.itemView.ingredient_consistency.text = ingredientsList[position].consistency
         holder.itemView.ingredient_original.text = ingredientsList[position].original
+
      }
 
     override fun getItemCount(): Int {

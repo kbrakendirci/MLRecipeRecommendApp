@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_height="200dp"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="7dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/recipe_image"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/recipe_name"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:lines="4"
+                android:ellipsize="end"
+                android:fontFamily="@font/courgette"
+                android:maxLines="2"
+                android:textColor="@color/darker"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintStart_toEndOf="@+id/recipe_image"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view3"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="@+id/recipe_name"
+                app:layout_constraintStart_toStartOf="@+id/recipe_name"
+                app:layout_constraintTop_toBottomOf="@+id/recipe_name" >
+                <ImageView
+                    android:id="@+id/heart_imageView"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    app:srcCompat="@drawable/ic_heart"
+                    app:tint="@color/red" />
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/likescount"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toBottomOf="@+id/heart_imageView"
+                    app:layout_constraintStart_toStartOf="@+id/heart_imageView"/>
+
+
+                <ImageView
+                    android:id="@+id/missed_imageView"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="0dp"
+                    app:layout_constraintEnd_toEndOf="@+id/missed_textView"
+                    app:layout_constraintStart_toStartOf="@+id/missed_textView"
+                    app:srcCompat="@drawable/shopping" />
+
+                <TextView
+                    android:layout_marginLeft="50dp"
+                    android:id="@+id/missed_textView"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="60dp"
+
+                    android:text="100"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toStartOf="@+id/likescount"
+                    app:layout_constraintTop_toBottomOf="@+id/missed_imageView" />
+
+                <TextView
+                    android:layout_marginLeft="50dp"
+                    android:id="@+id/percentage"
+                    android:layout_width="17dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="50dp"
+                    android:text="%"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@+id/likescount"
+                    app:layout_constraintTop_toBottomOf="@+id/missed_imageView" />
+
+                <ImageView
+                    android:id="@+id/leaf_imageView"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintEnd_toEndOf="@+id/unmissed_textView"
+                    app:layout_constraintStart_toStartOf="@+id/unmissed_textView"
+                    app:layout_constraintTop_toTopOf="@+id/missed_imageView"
+                    app:srcCompat="@drawable/ic_leaf" />
+
+
+                <TextView
+                    android:id="@+id/unmissed_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="Vegan"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toEndOf="@+id/missed_textView"
+                    app:layout_constraintTop_toBottomOf="@+id/leaf_imageView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

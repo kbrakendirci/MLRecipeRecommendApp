@@ -3,14 +3,14 @@
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_200">#15ca59</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="colorPrimary">#6200EA</color>
-    <color name="colorPrimaryDark">#5502C8</color>
-    <color name="colorAccent">#9D46FF</color>
+    <color name="colorPrimary">#6c97f2</color>
+    <color name="colorPrimaryDark">#6c97f2</color>
+    <color name="colorAccent">#6187d9</color>
 
     <color name="lightGray">#F9F9F9</color>
     <color name="mediumGray">#D1D1D1</color>
@@ -22,6 +22,7 @@
     <color name="red">#FF4646</color>
     <color name="yellow">#FFC114</color>
     <color name="green">#00C980</color>
+    <color name="bottomgreen">#6c97f2</color>
 
     // Custom Chip Style
     <color name="checkedChipBackgroundColor">#206200EA</color>
@@ -36,15 +37,15 @@
 
 
 
-     <color name="bg_screen1">#82db9f</color>
-    <color name="bg_screen2">#82db9f</color>
-    <color name="bg_screen3">#82db9f</color>
-
+     <color name="bg_screen1">#6c97f2</color>
+    <color name="bg_screen2">#6c97f2</color>
+    <color name="bg_screen3">#6c97f2</color>
+    <color name="bg_screen4">#6c97f2</color>
 
     <color name="dot_dark_screen1">#ffb466</color>
     <color name="dot_dark_screen2">#ffb466</color>
     <color name="dot_dark_screen3">#ffb466</color>
-    <color name="dot_dark_screen4">#a854d4</color>
+    <color name="dot_dark_screen4">#ffb466</color>
 
     <color name="dot_light_screen1">#FFA845</color>
     <color name="dot_light_screen2">#FFA845</color>
@@ -65,6 +66,7 @@
         <item>@color/dot_dark_screen4</item>
     </array>
 
+    <color name="loginedittex_color">#FFA845</color>
 
 
 </resources>
