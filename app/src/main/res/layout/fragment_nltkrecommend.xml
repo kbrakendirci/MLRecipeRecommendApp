@@ -53,22 +53,22 @@
         tools:ignore="MissingConstraints"
         >
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/recipesuggest"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:hint="Describe The Dish You Want To Make!"
-                android:textColorHint="@color/black"
-                app:layout_constraintBottom_toBottomOf="@+id/recipeCardView"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="0dp"></EditText>
-        </ScrollView>
+        <EditText
+            android:id="@+id/recipesuggest"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:hint="Describe The Dish You Want To Make!"
+            android:lines="5"
+            android:maxLines="10"
+            android:minLines="1"
+            android:scrollbars="none"
+            android:textColorHint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/recipeCardView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp"></EditText>
+
     </androidx.cardview.widget.CardView>
     <!--Create a TextInputLayout and choose the style,
         for now we are choosing the OutlinedBox ExposedDropdownMenu -->
