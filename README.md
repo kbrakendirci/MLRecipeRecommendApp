@@ -1,4 +1,14 @@
 # Modern-Food-Recipes-App
+This research project is a food recommendation application created using machine learning and natural language processing techniques to help people choose alternative recipes.The application will make suggestions to the user in different categories. Practical recipe suggestions or suggestions similar to people's food tastes will help people change their eating behavior by reducing the time spent searching for recipes.
+
+
+
+#  Main features considered while developing
+1.Recycler Views
+2.Fragments
+3.Retrofit
+4.ViewPager
+5.Firebase
 
 # Screenshots
 # Welcome Page
@@ -20,3 +30,8 @@
 8. Run the project into an emulator or a physical device. 
 
 NOTE:Replace your sponaculartoken in "Android->app->res->values->strings"
+
+# Other documents
+Senior Project Thesis:https://www.yumpu.com/en/account/magazines/edit/67017779
+Presentation:https://www.yumpu.com/en/account/magazines/edit/67024419
+Banner:
