@@ -19,4 +19,4 @@
     * On the Sign-in Method page, enable the Phone Number sign-in method. 
 8. Run the project into an emulator or a physical device. 
 
-NOTE:- Replace your sponaculartoken in "Android->app->res->values->strings"
+NOTE:Replace your sponaculartoken in "Android->app->res->values->strings"
