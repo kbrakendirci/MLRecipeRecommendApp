@@ -11,10 +11,12 @@ Build Instructions
 1. Clone or Download the repository:
 2.  git clone https://github.com/shrikanth7698/Zinger-Android-App.git  
 3. Import the project into Android Studio 
-4. Before running the project, you need to setup the Zinger Backend Server. Follow the intructions mentioned in this Link to setup the backend for this android app. 
+4. Before running the project, you need to setup the Zinger Backend Server.Go to the link and run the repo in the pycharm editor to set the backend of the android app.
 5. Create a firebase project, add this android app to that project: Firebase setup 
 6. Download google-services.json from the firebase project you created earlier and add it to the project under app folder 
 7. Enable Phone Number sign-in for your Firebase project
     * In the Firebase console, open the Authentication section. 
     * On the Sign-in Method page, enable the Phone Number sign-in method. 
 8. Run the project into an emulator or a physical device. 
+
+NOTE:- Replace your sponaculartoken in "Android->app->res->values->strings"
