@@ -10,4 +10,4 @@
 ![9ffnBa_3499f9d5a8ab69305b8d89ece6f21abf_00-00-05_00-00-13_2](https://user-images.githubusercontent.com/43795927/176048131-90a63096-578c-4f19-b443-d7b0d1782371.gif)
 
 # Login Processes
-![9ffnBa_3499f9d5a8ab69305b8d89ece6f21abf_00-00-05_00-00-13_2](https://user-images.githubusercontent.com/43795927/176049815-82663708-3d01-4a17-8e88-19fb7fd00ac3.gif)
+![9ffnBa_a550d29511f9b9a3480c114c0aa36e06_00-00-00_00-00-15_2 (1)](https://user-images.githubusercontent.com/43795927/176050222-27d58e07-b3eb-4e30-a6ac-49c0be7946c2.gif)
