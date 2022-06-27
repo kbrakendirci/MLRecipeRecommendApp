@@ -4,7 +4,7 @@ This research project is a food recommendation application created using machine
 
 
 #  Main features considered while developing
-1.Recycler Views
+1.Recycler Views                                                  
 2.Fragments
 3.Retrofit
 4.ViewPager
