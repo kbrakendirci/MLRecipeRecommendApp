@@ -7,7 +7,7 @@
 ![9ffnBa_942dc93c3fd0fe00b8bcd403bc0f3d96_00-00-03_00-00-16_2](https://user-images.githubusercontent.com/43795927/176051247-5ff4e4b1-f258-4497-bd3e-ea8c6551d9b1.gif)![9ffnBa_e5a2e80f97817199ea2542d50805a389_00-00-02_00-00-15_2](https://user-images.githubusercontent.com/43795927/176051753-6619e995-7b2a-4ccc-b258-72e09efa9e21.gif)
 ![9ffnBa_a4b7745067689954a90cbf3894cc5b95_00-00-00_00-00-11_2](https://user-images.githubusercontent.com/43795927/176052039-af0e279b-0605-483a-9b53-0a54b1a3721a.gif)
 
-Build Instructions
+# Build Instructions
 1. Clone or Download the repository:
 2.  git clone https://github.com/shrikanth7698/Zinger-Android-App.git  
 3. Import the project into Android Studio 
