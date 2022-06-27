@@ -36,4 +36,5 @@ Senior Project Thesis:https://www.yumpu.com/en/account/magazines/edit/67017779[Y
 
 Presentation:https://www.yumpu.com/en/account/magazines/edit/67024419
 Senior Project Thesis:https://www.yumpu.com/en/account/magazines/edit/67017779[Y02_MakinaÖğrenmesiDestekliYemekOneriUygulaması .pdf](https://github.com/kbrakendirci/MLRecipeRecommendApp/files/8996319/Y02_MakinaOgrenmesiDestekliYemekOneriUygulamasi.pdf)
-Banner:file:///Users/kubrakendirci/Downloads/Frame%202.pdf
+Banner:https://www.hizliresim.com/aqwxwqw
+
