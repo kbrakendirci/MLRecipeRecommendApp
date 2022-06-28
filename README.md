@@ -32,7 +32,7 @@ This research project is a food recommendation application created using machine
 NOTE:Replace your sponaculartoken in "Android->app->res->values->strings"
 
 # Other documents
-Senior Project Thesis:https://www.yumpu.com/en/account/magazines/edit/67017779[Y02_MakinaÖğrenmesiDestekliYemekOneriUygulaması .pdf]
+Senior Project Thesis:https://www.yumpu.com/en/account/magazines/edit/67017779
 Presentation:https://www.yumpu.com/en/account/magazines/edit/67024419
 Banner:https://www.hizliresim.com/aqwxwqw
 
